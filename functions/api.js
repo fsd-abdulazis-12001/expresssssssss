@@ -34,13 +34,10 @@ app.use(errorHandler)
 // app.listen(process.env.PORT, () => {
 //     console.log("Server running on port " + process.env.PORT);
 // });
-// const handler = ServerlessHttp(app);
-// module.exports.handler = async (event, context) => {
-//     const result = await handler(event, context);
-//     return result;
-// }
-
 const handler = ServerlessHttp(app);
+module.exports.handler = async (event, context) => {
+    const result = await handler(event, context);
+    return result;
+}
 
-// Export the handler directly
-module.exports = handler;
+ 
