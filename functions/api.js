@@ -6,8 +6,8 @@ import express from 'express';
 const app = express();
 const router = require('../routers');
 
-const { something,something2 } = require(".../middlewares/something");
-const { errorHandler } = require(".../middlewares/errorHanlder");
+// const { something,something2 } = require(".../middlewares/something");
+const { errorHandler } = require("../middlewares/errorHanlder");
 const cors = require("cors");
 
 
