@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 const rateLimit = require('express-rate-limit');
 // const userRouter = require("./user.router");
@@ -34,6 +34,9 @@ router.use(limiter, seriesTrending)
 router.use(limiter, topRatingFilmAndMovies)
 router.use(limiter, topRatingFilmSeriesHariIni)
 router.use(episodeList)
+router.get("/", (req, res) => {
+      res.send("Hello world")
+})
 
 
   

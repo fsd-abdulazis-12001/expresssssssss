@@ -1,4 +1,4 @@
-const knex = require('../Knex');
+const knex = require('.../Knex');
 
 
 module.exports.GetListDaftarSaya = async (req, res) => {

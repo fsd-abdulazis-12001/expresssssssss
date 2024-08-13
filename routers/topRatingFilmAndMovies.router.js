@@ -1,5 +1,5 @@
 
-const express = require("express");
+import express from "express";
 const router = express.Router();
 const {getTopRatingFilmAndMovies} = require("../controllers/topRatingFilmAndMovies.controller");
 

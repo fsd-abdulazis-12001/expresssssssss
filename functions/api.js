@@ -1,7 +1,8 @@
-require("dotenv").config();
+import dotenv from 'dotenv';
+dotenv.config();
 import ServerlessHttp from "serverless-http";
-const { json } = require("express");
-const express = require("express");
+import express from 'express';
+
 const app = express();
 const router = require('../routers');
 
@@ -16,7 +17,7 @@ app.use(cors());
 
 // app.use([something, something2]);
 app.use(express.json());
-app.use("/api",router);
+app.use("/.netlify/functions/api",router);
  
 
  
