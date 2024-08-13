@@ -4,8 +4,7 @@ import ServerlessHttp from "serverless-http";
 import express from 'express';
 
 const app = express();
-const path = require('path');
-const router = require(path.join(__dirname, '../routers'));
+const router = require('../routers');
 
 const { something,something2 } = require(".../middlewares/something");
 const { errorHandler } = require(".../middlewares/errorHanlder");
