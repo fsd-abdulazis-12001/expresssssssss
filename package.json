@@ -6,9 +6,12 @@
     "express-rate-limit": "^7.4.0",
     "knex": "^3.1.0",
     "mysql2": "^3.10.3",
+    "netlify-cli": "^17.34.0",
+    "netlify-lambda": "^2.0.16",
     "pg": "^8.12.0",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2",
+    "serverless-http": "^3.2.0",
     "uuid": "^10.0.0"
   },
   "name": "express",
@@ -17,7 +20,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "netlify deploy --prod"
   },
   "author": "freyzs",
   "license": "ISC",
