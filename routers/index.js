@@ -18,8 +18,8 @@ const episodeList = require("./episodes.router")
 
 
 const limiter = rateLimit({
-    windowMs: 1 * 20 * 1000,
-    max: 65,
+    windowMs: 1 * 10 * 1000,
+    max: 40,
     message: 'Too many requests from this IP, please try again after a minute(SENGAJA BUAT TESTING TAMPILAN)'
   });
 

@@ -3,16 +3,18 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
 
+require("dotenv").config();
+module.exports = {
+ 
   development: {
     client: 'pg',
     connection: {
-      host : 'db-postgresql-sgp1-74178-do-user-17224431-0.h.db.ondigitalocean.com',
+      host : process.env.DB_HOST,
       port: 25060,
-      database: 'defaultdb',
-      user:     'doadmin',
-      password: 'AVNS_AI05TUfmKKLHuK3LMKy',
+      database: process.env.DB_NAME,
+      user:      process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
       ssl: { rejectUnauthorized: false }
     },
     pool: {
