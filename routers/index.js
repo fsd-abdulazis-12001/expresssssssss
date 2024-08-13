@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-const rateLimit = require('express-rate-limit');
+import rateLimit from "express-rate-limit"
 // const userRouter = require("./user.router");
 // const productRouter = require("./product.router");
 // const testdb = require("./testdb.router")
