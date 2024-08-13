@@ -4,10 +4,11 @@ import ServerlessHttp from "serverless-http";
 import express from 'express';
 
 const app = express();
-const router = require('../routers');
+const path = require('path');
+const router = require(path.join(__dirname, '../routers'));
 
-const { something,something2 } = require("../middlewares/something");
-const { errorHandler } = require("../middlewares/errorHanlder");
+const { something,something2 } = require(".../middlewares/something");
+const { errorHandler } = require(".../middlewares/errorHanlder");
 const cors = require("cors");
 
 
