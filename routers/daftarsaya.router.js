@@ -1,10 +1,11 @@
 import express from "express";
 const router = express.Router();
-const {GetListDaftarSaya, AddListDaftarSaya, RemoveListDaftarSaya} = require("../controllers/daftarSaya.controller");
+const {GetListDaftarSaya, AddDaftarSaya, RemoveDaftarSaya, PatchDaftarSaya} = require("../controllers/daftarSaya.controller");
 
 router.get("/daftarsaya", GetListDaftarSaya);
-router.post("/daftarsaya", AddListDaftarSaya);
-router.delete("/daftarsaya/:idf", RemoveListDaftarSaya);
+router.post("/daftarsaya", AddDaftarSaya);
+router.delete("/daftarsaya/:idf", RemoveDaftarSaya);
+router.patch("/daftarsaya/:idf", PatchDaftarSaya);
 
 module.exports = router
 

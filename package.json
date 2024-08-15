@@ -17,11 +17,12 @@
   },
   "name": "express",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "functions/api.cjs",
+ "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js",
+    "dev": "nodemon functions/api.js",
     "build": "netlify deploy --prod"
   },
   "author": "freyzs",

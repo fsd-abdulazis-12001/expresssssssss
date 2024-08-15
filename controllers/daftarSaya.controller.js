@@ -15,7 +15,7 @@ module.exports.GetListDaftarSaya = async (req, res) => {
     }
 }
 
-module.exports.AddListDaftarSaya = async (req, res) => {
+module.exports.AddDaftarSaya = async (req, res) => {
     console.log(req.body)
     const { idf, title, image, neweps, top10 } = req.body;
 
@@ -45,7 +45,7 @@ module.exports.AddListDaftarSaya = async (req, res) => {
     }
 };
 
-module.exports.RemoveListDaftarSaya = async (req, res) => {
+module.exports.RemoveDaftarSaya = async (req, res) => {
     const { idf } = req.params;
     try {
         const deletedListDaftarSaya = await knex('listdaftarsaya')
@@ -62,7 +62,7 @@ module.exports.RemoveListDaftarSaya = async (req, res) => {
         return res.status(500).json({ error });
     }
 }
-module.exports.PatchListDaftarSaya = async (req, res) => {
+module.exports.PatchDaftarSaya = async (req, res) => {
     const { idf } = req.params;
     const { image } = req.body;
 
