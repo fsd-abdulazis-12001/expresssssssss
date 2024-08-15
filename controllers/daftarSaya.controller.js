@@ -83,6 +83,6 @@ module.exports.PatchListDaftarSaya = async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'Gagal mengupdate List Daftar Kamu' });
+        return res.status(500).json({ error });
     }
 }
