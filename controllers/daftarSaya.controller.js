@@ -25,7 +25,12 @@ module.exports.AddListDaftarSaya = async (req, res) => {
     }
 
     try {
-        // Insert the new record into the database
+        
+        const existingRecord = await knex('listdaftarsaya').where({ idf }).first();
+
+        if (existingRecord) {
+            return res.status(400).json({ error: 'Sudah Ada di list kamu!' });
+        }
         const newListDaftarSaya = await knex('listdaftarsaya').insert({
             idf,
             image,
@@ -36,7 +41,7 @@ module.exports.AddListDaftarSaya = async (req, res) => {
         return res.status(201).json(newListDaftarSaya);
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'gagal menambahkan ke List Daftar Kamu' });
+        return res.status(500).json({error});
     }
 };
 
@@ -54,6 +59,6 @@ module.exports.RemoveListDaftarSaya = async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'Gagal menghapus List Daftar Kamu' });
+        return res.status(500).json({ error });
     }
 }
