@@ -62,3 +62,27 @@ module.exports.RemoveListDaftarSaya = async (req, res) => {
         return res.status(500).json({ error });
     }
 }
+module.exports.PatchListDaftarSaya = async (req, res) => {
+    const { idf } = req.params;
+    const { image } = req.body;
+
+    if (!image) {
+        return res.status(400).json({ error: 'Image field is required' });
+    }
+
+    try {
+        const updatedListDaftarSaya = await knex('listdaftarsaya')
+            .where('idf', idf)
+            .update({ image })
+            .returning('*');
+        
+        if (updatedListDaftarSaya.length > 0) {
+            return res.status(200).json(updatedListDaftarSaya[0]);
+        } else {
+            return res.status(404).json({ error: 'List Daftar Kamu Tidak Ditemukan' });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Gagal mengupdate List Daftar Kamu' });
+    }
+}
